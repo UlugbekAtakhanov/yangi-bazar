@@ -4,16 +4,13 @@ import {BsInfoSquareFill, BsFillAwardFill} from "react-icons/bs"
 import {MdOutlineHistoryEdu} from "react-icons/md"
 import {RiVipDiamondFill} from 'react-icons/ri'
 import {FiLayers} from "react-icons/fi"
-import {DiMitlicence} from "react-icons/di"
 import {ImDatabase} from "react-icons/im"
 import {AiFillRead} from "react-icons/ai"
 import {Link} from 'react-router-dom'
 import "./Navbar2.scss"
-import {useGlobalContext} from '../../context'
 
 
 const Navbar2 = () => {
-    const {submenuClose, submenuOpen} = useGlobalContext()
 
     const [isSideBarOpen, setIsSideBarOpen] = useState(false)
     const [sidebarActive, setSidebarActive] = useState(false)

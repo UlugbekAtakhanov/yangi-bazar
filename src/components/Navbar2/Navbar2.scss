@@ -205,6 +205,7 @@ main {
   padding: 1rem 2rem;
   box-shadow: var(--light-shadow);
   transition: .3s;
+  z-index: 3;
   
   .fixed-nav {
     display: flex;

@@ -1,6 +1,7 @@
-import React from "react"
+import React, {useEffect, useState} from "react"
 import {Route, Switch} from 'react-router-dom'
 import Asosiy from "./components/Asosiy/Asosiy";
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 import Aloqalar from "./pages/Aloqalar/Aloqalar";
 import Biznes from "./pages/BiznesReja/Biznes";
 import Jam from "./pages/JamiyatHujjatlar/Jam";
@@ -13,6 +14,17 @@ import Tashkiliy from "./pages/TashkiliyTuzulma/Tashkiliy";
 import UmumiyMalumot from "./pages/UmumiyMalumot/UmumiyMalumot";
 
 function App() {
+    const [scroll, setScroll] = useState(0)
+
+    useEffect(() => {
+
+      window.addEventListener("scroll", () => {
+          setScroll(window.scrollY)
+      })
+        
+    }, [scroll])
+
+
   return (
     <div className="App">
       <Switch>
@@ -28,6 +40,7 @@ function App() {
         <Route path = "/biznesreja" exact component = {Biznes} />
         <Route path = "/aloqalar" exact component = {Aloqalar} />
       </Switch>
+      {scroll > 700 && <ScrollToTop /> }
     </div>
   );
 }

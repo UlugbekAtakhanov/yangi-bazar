@@ -2,9 +2,6 @@ import React, {useEffect, useState} from 'react'
 import {FaTelegramPlane, FaInstagram, FaFacebook} from 'react-icons/fa'
 import {Link} from 'react-router-dom'
 
-import Owl from 'react-owl-carousel2'
-import "react-owl-carousel2/lib/styles.css"
-import "react-owl-carousel2/src/owl.theme.default.css"
 
 import AOS from 'aos'
 import "aos/dist/aos.css"
@@ -15,6 +12,8 @@ import Navbar from '../Navbar/Navbar'
 import Button from '../Button/Button'
 import News from '../../data/yaniliklar'
 import Yangiliklar from '../Yangiliklar/Yangiliklar'
+import Footer from '../Footer/Footer'
+import Carousel from '../Carousel/Carousel'
 
 
 const Asosiy = () => {
@@ -23,42 +22,25 @@ const Asosiy = () => {
     const [email, setEmail] = useState("")
     const [error, setError] = useState("")
     const [obuna, setObuna] = useState("")
-    // OWL
-    const options = {
-        animateOut: "fadeOut",
-        items: 1,
-        rewind: true,
-        loop: true,
-        dots: false,
-        nav: false,
-        autoplay: true,
-        margin: 10
-    };
+
 
     // AOS
     useEffect(() => {
         AOS.init()
     }, [])
 
-    useEffect(() => {
-
-    }, [])
 
 
     const obunaHandler = (e) => {
         e.preventDefault()
         if (!ism || !email) {
             setTimeout(() => {
-                // setIsm("")
-                // setEmail("")
                 setError("")
             }, 3000);
             return setError("Илтимос Исмингиз ва Email адрессингизни киритинг")
         }
         if (!email.includes("@") || !email.includes(".")) {
             setTimeout(() => {
-                // setIsm("")
-                // setEmail("")
                 setError("")
             }, 3000);
             return setError("Илтимос Email адрессингизни тугри киритинг!")
@@ -72,18 +54,28 @@ const Asosiy = () => {
         }, 3000);
     }
     
-    console.log(error);
-
     return (
         <>
 
             <div className="container1" id = "asosiy">
 
-                <Owl options={options} className = "owl-carousel" >
-                    <div><img src="./images/1.png" alt="The Last of us"/></div>
-                    <div><img src="./images/2.png" alt="GTA V"/></div>
-                    <div><img src="./images/3.jpg" alt="Mirror Edge"/></div>
-                </Owl>
+                <div id="carouselExampleFade" className="carousel slide carousel-fade" data-bs-ride="carousel">
+                    <div className="carousel-inner">
+                        <div className="carousel-item active">
+                            <img src="./images/bozor1.jpg" className="d-block w-100" alt="..." />
+                        </div>
+                        <div className="carousel-item">
+                            <img src="./images/bozor2.jpg" className="d-block w-100" alt="..." />
+                        </div>
+                        <div className="carousel-item">
+                            <img src="./images/bozor3.jpg" className="d-block w-100" alt="..." />
+                        </div>
+                        <div className="carousel-item">
+                            <img src="./images/bozor4.jpg" className="d-block w-100" alt="..." />
+                        </div>
+                    </div>
+                </div>
+
 
                 <div className="overlay">
 
@@ -133,7 +125,7 @@ const Asosiy = () => {
                             </Link>
                         </div>
                         <div className = "img-container">
-                            <img src="./images/4.jpg" alt="" />
+                            <img src="./images/bozor5.jpg" alt="" />
                         </div>
                     </div>
 
@@ -148,26 +140,31 @@ const Asosiy = () => {
                             <p className = "p1">бизнинг фаолиятимиздаги</p>
                             <h3 className = "h3">янгиликлар</h3>
                             <div className="section1">
+
                                 <div className="item"  data-aos = "fade-up" data-aos-delay = "300" >
-                                    <div className="circle"><img src="./images/gerb.jpg" alt="" /></div>
-                                    <p className = "title">
-                                        <a href = "https://namangan24.uz/zhamiyat">
-                                            Президент арзонгарчиликка йўл очувчи қонунни имзолади
-                                        </a>
-                                    </p>
-                                    <p>Ўзбекистон Республикаси Президенти Шавкат Мирзиёев “Ўзбекистон Республикаси Солиқ кодексига аҳолини асосий турдаги озиқ-овқат маҳсулотлари билан кафолатли таъминлашга қаратилган қўшимча киритиш тўғрисида”ги Қонунни имзолади.</p>
+                                    <div className="circle"><img src="./images/yangilik4.jpg" alt="" /></div>
+                                    <div>
+                                        <p className = "title">
+                                            <a href = "https://namangan24.uz/zhamiyat">
+                                                Президент арзонгарчиликка йўл очувчи қонунни имзолади
+                                            </a>
+                                        </p>
+                                        <p>Ўзбекистон Республикаси Президенти Шавкат Мирзиёев “Ўзбекистон Республикаси Солиқ кодексига аҳолини асосий турдаги озиқ-овқат маҳсулотлари билан кафолатли таъминлашга қаратилган қўшимча киритиш тўғрисида”ги Қонунни имзолади.</p>
+                                    </div>
                                 </div>
                                 <div className="item"  data-aos = "fade-up" data-aos-delay = "300" >
-                                    <div className="circle"><img src="./images/gerb.jpg" alt="" /></div>
-                                    <p className = "title">
-                                        <a href="https://kun.uz/news/2021/02/07/namangan-va-panjob-viloyatlari-birodarlashgan-hududlar-deya-elon-qilindi">
-                                            Наманган ва Панжоб вилоятлари «Биродарлашган ҳудудлар» дея эълон қилинди
-                                        </a>
-                                    </p>
-                                    <p>
-                                        6 февраль куни Наманганга Панжоб вилояти губернатори Муҳаммад Сарвар бошчилигидаги Покистон делегацияси ташриф буюрди.
-                                        Наманган вилояти ҳокими Шавкат Абдураззоқов делегацияни гуллар шаҳрида кўриб турганидан мамнунлигини айтиб, бу ташриф Наманган делегациясининг 2019 йилда Покистонга қилган сафарига амалий жавоб бўлганини қайд этди.
-                                    </p>
+                                    <div className="circle"><img src="./images/yangilik5.jpg" alt="" /></div>
+                                    <div>
+                                        <p className = "title">
+                                            <a href="https://kun.uz/news/2021/02/07/namangan-va-panjob-viloyatlari-birodarlashgan-hududlar-deya-elon-qilindi">
+                                                Наманган ва Панжоб вилоятлари «Биродарлашган ҳудудлар» дея эълон қилинди
+                                            </a>
+                                        </p>
+                                        <p>
+                                            6 февраль куни Наманганга Панжоб вилояти губернатори Муҳаммад Сарвар бошчилигидаги Покистон делегацияси ташриф буюрди.
+                                            Наманган вилояти ҳокими Шавкат Абдураззоқов делегацияни гуллар шаҳрида кўриб турганидан мамнунлигини айтиб, бу ташриф Наманган делегациясининг 2019 йилда Покистонга қилган сафарига амалий жавоб бўлганини қайд этди.
+                                        </p>
+                                    </div>
                                 </div>
 
                                 <a href = "https://namangan24.uz/" className = "yangiliklar-btn">
@@ -218,59 +215,12 @@ const Asosiy = () => {
             </div>
             
             <div className="container5" id = "contact">
+                <h2>бозор хайотидан лавхалар</h2>
                 <div className="main">
-                    <div className="card-container"  data-aos = "zoom-in" data-aos-delay = "300">
-                        <img src="./images/1-odam.png" alt="" />
-                        <p>Эшондадаев Шухрат Абдуллаевич</p>
-                        <p>Директор</p>
-                        <p>Тел/факс (91) 361-49-49</p>
-                        <div className = "icons-container">
-                            <Link to = "#">
-                                <FaTelegramPlane />
-                            </Link>
-                            <Link to = "#">
-                                <FaFacebook />
-                            </Link>
-                            <Link to = "#">
-                                <FaInstagram />
-                            </Link>
-                        </div>
 
-                    </div>
-                    <div className="card-container"  data-aos = "zoom-in" data-aos-delay = "400">
-                        <img src="./images/2-odam.png" alt="" />
-                        <p>Акбаров Носиржон Аскаралиевич</p>
-                        <p>Директор ўринбосари</p>
-                        <p>Тел/факс (91) 361-00-20</p>
-                        <div className = "icons-container">
-                            <Link to = "#">
-                                <FaTelegramPlane />
-                            </Link>
-                            <Link to = "#">
-                                <FaFacebook />
-                            </Link>
-                            <Link to = "#">
-                                <FaInstagram />
-                            </Link>
-                        </div>
-                    </div>
-                    <div className="card-container"  data-aos = "zoom-in" data-aos-delay = "500">
-                        <img src="./images/3-odam.png" alt="" />
-                        <p>Бабаева Муяссар Умаржановна</p>
-                        <p>Бош хисобчи</p>
-                        <p>Тел/факс (93) 406-71-27</p>
-                        <div className = "icons-container">
-                            <Link to = "#">
-                                <FaTelegramPlane />
-                            </Link>
-                            <Link to = "#">
-                                <FaFacebook />
-                            </Link>
-                            <Link to = "#">
-                                <FaInstagram />
-                            </Link>
-                        </div>
-                    </div>
+                            {/* CAROUSEL */}
+                            <Carousel />
+
                 </div>
             </div>
 
@@ -323,8 +273,10 @@ const Asosiy = () => {
                         </div>
                     </div>
                 </div>
-                <p className = "temp">templated by: <a href="">namsoft</a></p>
+                {/* <p className = "temp">templated by: <a href="">namsoft</a></p> */}
+                <Footer />
             </div>
+
 
         </>
     )

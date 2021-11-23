@@ -1,12 +1,12 @@
-import React, {useState, useContext} from "react"
+import React, {useContext} from "react"
 
 const AppContext = React.createContext()
 
 export const AppProvider = ({children}) => {
-    const [isSidebarOpen, setIsSidebarOpen] = useState(false)
-    const [isSubmenuOpen, setIsSubmenuOpen] = useState(false)
-    const [itemCoordinates, setItemCoordinates] = useState({})
-    const [currentPage, setCurrentPage] = useState({page: "", links: []})
+    // const [isSidebarOpen, setIsSidebarOpen] = useState(false)
+    // const [isSubmenuOpen, setIsSubmenuOpen] = useState(false)
+    // const [itemCoordinates, setItemCoordinates] = useState({})
+    // const [currentPage, setCurrentPage] = useState({page: "", links: []})
 
     // const sidebarClose = () => {
     //     setIsSidebarOpen(false)
