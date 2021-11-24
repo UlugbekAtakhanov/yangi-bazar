@@ -54,13 +54,13 @@ const Aloqalar = () => {
                     <h3>Алоқалар</h3>
                     <p>
                         
-                        <span>Манзил:</span> Namangan shahar,Islom Karimov ko'chasi, tel: () 123+456+789
+                        <span>Манзил:</span> Namangan shahar,Islom Karimov ko'chasi,
 
-                        <br /><br /> <span> Телефон:</span> () 123+456+789
+                        <br /><br /> <span> Телефон:</span> +998 (69) 234-31-97
 
-                        <br /><br /> <span> Факс:</span> () 123+456+789
+                        <br /><br /> <span> Факс:</span> +998 (69) 234-31-97
 
-                        <br /><br /> <span> E-mail:</span> contact@youremail.com
+                        <br /><br /> <span> E-mail:</span> dustlik.ssk@mail.ru
 
                         <br /><br /> <span> Иш тартиби:</span> 9:00-18:00; тушлик: 13:00-14:00
                     </p>

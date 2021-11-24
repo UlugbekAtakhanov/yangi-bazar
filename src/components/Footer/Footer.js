@@ -15,16 +15,17 @@ const Footer = () => {
                 <address>
                     Namangan shahar,<br />
                     Islom Karimov ko'chasi,<br />
-                    tel: () 123+456+789
+                    Email: dustlik.ssk@mail.ru, <br />
+                    Tel: +998 (69) 234-31-97
                 </address><br />
                 <div className = "icons-container">
-                    <Link to = "/sth1">
+                    <Link to = "/">
                         <FaTelegramPlane />
                     </Link>
-                    <Link to = "/sth2">
+                    <Link to = "/">
                         <FaFacebook />
                     </Link>
-                    <Link to = "/sth3">
+                    <Link to = "/">
                         <FaInstagram />
                     </Link>
                 </div>

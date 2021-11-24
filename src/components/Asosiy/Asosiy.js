@@ -258,7 +258,7 @@ const Asosiy = () => {
                         <address>
                             Namangan shahar,<br />
                             Islom Karimov ko'chasi,<br />
-                            tel: () 123+456+789
+                            tel: +998 (69) 234-31-97
                         </address><br />
                         <div className = "icons-container">
                             <Link to = "#">
@@ -273,7 +273,6 @@ const Asosiy = () => {
                         </div>
                     </div>
                 </div>
-                {/* <p className = "temp">templated by: <a href="">namsoft</a></p> */}
                 <Footer />
             </div>
 

@@ -13,7 +13,7 @@ const Button = () => {
 
     return (
         <>
-            <a href = "#biz-haqimizda" className = "btn"  data-aos = "fade-up" data-aos-delay = "300" >Ko'proq ma'lumot</a>
+            <button className = "btn"  data-aos = "fade-up" data-aos-delay = "300" >Ko'proq ma'lumot</button>
         </>
     )
 }

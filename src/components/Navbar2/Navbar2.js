@@ -21,9 +21,6 @@ const Navbar2 = () => {
         setSidebarActive(!sidebarActive)
     }
 
-    
-
-
     return (
         <IconContext.Provider value = {{size: "20px", color: "hsl(205, 77%, 27%)"}}>
             <div className= {sidebarActive ? "fixed-nav-container fixed-nav-container-active" : "fixed-nav-container"}>

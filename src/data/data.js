@@ -1,10 +1,6 @@
 import { FaCreditCard, FaBook } from 'react-icons/fa';
 import React from 'react';
 const sublinks = [
-  // {
-  //   page: "Асосий",
-  //   links: []
-  // },
   {
     page: 'Биз Ҳакиммизда',
     links: [
@@ -23,10 +19,6 @@ const sublinks = [
       { label: 'Жамиятнинг хужжатлари', icon: <FaBook />, url: '/jamiyathujjatlari' },
     ],
   },
-  // {
-  //   page: "Алоқалар",
-  //   links: []
-  // }
 ];
 
 export default sublinks;

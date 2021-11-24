@@ -8,39 +8,21 @@ import {ImDatabase} from "react-icons/im"
 import {AiFillRead} from "react-icons/ai"
 import "./Navbar.scss"
 import {Link} from 'react-router-dom'
-// import Navbar2 from '../Navbar2/Navbar2'
 
 const Navbar = () => {
 
-    // const [scroll, setScroll] = useState(0)
-
-    // useEffect(() => {
-    //     window.scrollTo(0, 0)
-    // }, [])
-
-    // useEffect(() => {
-
-    //     window.addEventListener("scroll", () => {
-    //         setScroll(window.scrollY)
-    //     })
-        
-    // }, [scroll])
-
-    // if (scroll > 300) {
-    //     return <Navbar2 />
-    // }
     return (
         <IconContext.Provider value = {{size: "20px", color: "hsl(205, 77%, 27%)"}}>
             <div className="pre-nav-container" >
                 <div className = "pre-nav">
                     <div className="div1">
-                        <a href="/sth1">Telegram</a>
-                        <a href="/sth1">Instagram</a>
-                        <a href="/sth1">Facebook</a>
+                        <a href="/">Telegram</a>
+                        <a href="/">Instagram</a>
+                        <a href="/">Facebook</a>
                     </div>
                     <div className="div2">
-                        <a href="/sth1">contact@youremail.com</a>
-                        <p>+998 91 361-49-49</p>
+                        <p style = {{fontSize:"14px"}}>dustlik.ssk@mail.ru</p>
+                        <p>+998 (69) 234-31-97</p>
                     </div>
                 </div>
             </div>

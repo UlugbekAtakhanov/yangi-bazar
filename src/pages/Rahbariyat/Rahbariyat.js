@@ -21,7 +21,7 @@ const Rahbariyat = () => {
             <Navbar2 />
             <div className="container border bg-white p-5 rahbariyat-article">
                 <div className="rahbariyat-img">
-                    <img src="./images/1-odam.png" alt="" />
+                    <img src="./images/2-odam.png" alt="" />
                 </div>
                 <div className = "rahbariyat-section1">
                     <div>
@@ -40,7 +40,7 @@ const Rahbariyat = () => {
             </div>
             <div className="container border bg-white p-5 mt-2 rahbariyat-article">
                 <div className="rahbariyat-img">
-                    <img src="./images/2-odam.png" alt="" />
+                    <img src="./images/1-odam.png" alt="" />
                 </div>
 
                 <div className = "rahbariyat-section1">
