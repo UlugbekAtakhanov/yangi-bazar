@@ -11,12 +11,12 @@ const Footer = () => {
                 <p>Ⓣ - мақола ва материалларда қўйилган мазкур белги уларнинг тижорат ва реклама ҳуқуқлари асосида эълон қилинганлигини билдиради.</p>
             </div>
             <div className="contact">
-                <p>Biz bilan bog'laning</p>
+                <p>Биз билан боғланинг</p>
                 <address>
-                    Namangan shahar,<br />
-                    Islom Karimov ko'chasi,<br />
+                    Наманган шаҳар,<br />
+                    Ислом Каримов кўчаси,<br />
                     Email: dustlik.ssk@mail.ru, <br />
-                    Tel: +998 (69) 234-31-97
+                    Тел: +998 (69) 234-31-97
                 </address><br />
                 <div className = "icons-container">
                     <Link to = "/">

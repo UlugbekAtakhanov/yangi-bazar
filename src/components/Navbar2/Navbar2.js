@@ -27,7 +27,9 @@ const Navbar2 = () => {
                 <div className="fixed-nav">
                     <div className = "fixed-sidebar-container">
                         <div className="logo">
-                            <h2 data-aos = "fade-right" data-aos-delay = "500"><span>SSK</span>Do'stlik </h2>
+                            <Link to ="/" style={{color: "green"}}>
+                                <h2 data-aos = "fade-right" data-aos-delay = "500"><span>SSK</span>Do'stlik </h2>
+                            </Link>
                         </div>
                         <div className = {sidebarActive ? "fixed-sidebar active" : "fixed-sidebar"} onClick = {sidebarOpenHandler}></div> 
                     </div>

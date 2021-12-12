@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
-import {FaTelegramPlane, FaInstagram, FaFacebook} from 'react-icons/fa'
 import {Link} from 'react-router-dom'
+import axios from 'axios'
 
 
 import AOS from 'aos'
@@ -15,6 +15,8 @@ import Yangiliklar from '../Yangiliklar/Yangiliklar'
 import Footer from '../Footer/Footer'
 import Carousel from '../Carousel/Carousel'
 
+const currencyAPI = "https://nbu.uz/en/exchange-rates/json/"
+
 
 const Asosiy = () => {
 
@@ -23,6 +25,39 @@ const Asosiy = () => {
     const [error, setError] = useState("")
     const [obuna, setObuna] = useState("")
 
+    const [dollar, setDollar] = useState("")
+    const [euro, setEuro] = useState("")
+    const [pound, setPound] = useState("")
+    const [ruble, setRuble] = useState("")
+    const [yuan, setYuan] = useState("")
+    const [lira, setLira] = useState("")
+
+    const date = new Date()
+    const day = date.getDate()
+    const month = date.getMonth() + 1
+    const year = date.getFullYear()
+
+    console.log(day, month, year);
+
+    useEffect(() => {
+        const fetchCurrency = async () => {
+            try {
+                const {data} = await axios.get(currencyAPI)
+                console.log(data);
+                data.map(item => {
+                    if (item.code === "USD") return setDollar(item)
+                    if (item.code === "EUR") return setEuro(item)
+                    if (item.code === "GBP") return setPound(item)
+                    if (item.code === "RUB") return setRuble(item)
+                    if (item.code === "CNY") return setYuan(item)
+                    if (item.code === "TRY") return setLira(item)
+                })
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        fetchCurrency()
+    }, [])
 
     // AOS
     useEffect(() => {
@@ -84,9 +119,11 @@ const Asosiy = () => {
                     <div className="main-container">
                         <div className="main">
                             <div data-aos = "fade-up" data-aos-delay = "1000">
-                                <h2>Biz sizga hamkorlikni <br /> taklif qilamiz <span>.</span></h2>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, dolor harum non ducimus rerum eveniet aliquid accusantium ipsa quia ab.</p>
-                                <Button />
+                                <h2>биз сизга хамкорликни <br /> таклиф қиламиз <span>.</span></h2>
+                                <p>Ташриф буюринг ва ўзингизга керакли сифатли маҳсулотларни қулай нархларда  харид қилинг</p>
+                                <a href="#biz-haqimizda">
+                                    <Button />
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -187,35 +224,35 @@ const Asosiy = () => {
             <div className="container4">
                 <div className="main">
                     <div className="left">
-                        <h1>foydali <br /> manbalar</h1>
+                        <h1>фoйдали <br /> манбалар</h1>
                     </div>
                     <div className="right">
                         <div className="div1">
                             <img src="./images/8.png" alt="" />
-                            <a href="https://www.namangan.uz/uz/">Namangan Viloyat Hokimligi</a>
+                            <a href="https://www.namangan.uz/uz/">Наманган вилояти хокимлиги</a>
                         </div>
                         <div className="div1">
                             <img src="./images/govuz.png" alt="" />
-                            <a href="https://www.gov.uz/uz">O'zbekiston Respublikasi Hukumat portali</a>
+                            <a href="https://www.gov.uz/uz">Ўзбекистон Республикаси Ҳукумат портали</a>
                         </div>
                         <div className="div1">
                             <img src="./images/korporativ.png" alt="" />
-                            <a href="http://www.openinfo.uz/uz/">Korporativ axborot yagona portali</a>
+                            <a href="http://www.openinfo.uz/uz/">Корпоратив ахборот ягона портали</a>
                         </div>
                         <div className="div1">
                             <img src="./images/lex.png" alt="" />
-                            <a href="https://lex.uz/">Fond bozorining axborot-resurs markazi</a>
+                            <a href="https://lex.uz/">Фонд бозорининг ахборот-ресурс маркази</a>
                         </div>
                         <div className="div1">
                             <img src="./images/fond.png" alt="" />
-                            <a href="https://fondbozori.uz/usx/index.html?lang=LC">Fond bozorining axborot-resurs markazi</a>
+                            <a href="https://fondbozori.uz/usx/index.html?lang=LC">Фонд бозорининг ахборот-ресурс маркази</a>
                         </div>
                     </div>
                 </div>
             </div>
             
             <div className="container5" id = "contact">
-                <h2>бозор хайотидан лавхалар</h2>
+                <h2>Бозор хаётидан лавҳалар</h2>
                 <div className="main">
 
                             {/* CAROUSEL */}
@@ -253,24 +290,20 @@ const Asosiy = () => {
                             <li>Жавоб юборилди: <span>6</span></li>
                         </ul>
                     </div>
-                    <div className="contact">
-                        <p>Biz bilan bog'laning</p>
-                        <address>
-                            Namangan shahar,<br />
-                            Islom Karimov ko'chasi,<br />
-                            tel: +998 (69) 234-31-97
-                        </address><br />
-                        <div className = "icons-container">
-                            <Link to = "#">
-                                <FaTelegramPlane />
-                            </Link>
-                            <Link to = "#">
-                                <FaFacebook />
-                            </Link>
-                            <Link to = "#">
-                                <FaInstagram />
-                            </Link>
-                        </div>
+                    <div className="currency-container">
+                            <p className = "p1">{day}.{month}.{year} дан МБ валюта курслари</p>
+                            <div>
+                                <p> 1 <img src="./images/dollar.png" alt="" />{dollar.code} = {dollar.cb_price}</p>
+                                <p>1 <img src="./images/euro.png" alt="" />{euro.code} = {euro.cb_price}</p>
+                                <p>1 <img src="./images/ruble.png" alt="" />{ruble.code} = {ruble.cb_price}</p>
+                                <p>1 <img src="./images/pound.png" alt="" />{pound.code} = {pound.cb_price}</p>
+                                <p>1 <img src="./images/yuan.png" alt="" />{yuan.code} = {yuan.cb_price}</p>
+                                <p>1 <img src="./images/lira.png" alt="" />{lira.code} = {lira.cb_price}</p>
+                                <p className = "cbu">
+                                    <img src="./images/cbu.png" alt="" />
+                                    <a href="https://cbu.uz/oz/">Central Bank of Uzbekistan</a>
+                                </p>
+                            </div>
                     </div>
                 </div>
                 <Footer />

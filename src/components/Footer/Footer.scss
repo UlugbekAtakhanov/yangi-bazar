@@ -179,8 +179,9 @@ main {
     // background: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
     background: url("../../images/useful3.jpg") no-repeat;
     background-size: cover;
-    padding: 1rem;
+    padding: 2rem 1rem;
     display: flex;
+    align-items: center;
     gap: 2rem;
     p {
         color: #fff;
@@ -190,6 +191,7 @@ main {
         width: 70%;
     }
     .contact {
+      // border: 3px solid red;
 
         address {
             color: #fff;
@@ -201,7 +203,7 @@ main {
             font-weight: 600;
         }
         .icons-container {
-            margin-bottom: 1rem;
+            // margin-bottom: 1rem;
             display: flex;
             gap: 1rem;
             a {

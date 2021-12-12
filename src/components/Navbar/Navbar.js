@@ -29,9 +29,9 @@ const Navbar = () => {
 
             <div className= "nav-container">
                 <div className="nav">
-                    <div className="logo">
+                    <Link to = "/" className="logo">
                         <h1 data-aos = "fade-right" data-aos-delay = "500"><span>SSK</span>Do'stlik </h1>
-                    </div>
+                    </Link>
                     <ul className = "nav-list">
                         <li><Link to = "/">асосий</Link></li>
                         <li>биз Ҳакиммизда

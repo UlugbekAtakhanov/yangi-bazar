@@ -13,7 +13,7 @@ const Button = () => {
 
     return (
         <>
-            <button className = "btn"  data-aos = "fade-up" data-aos-delay = "300" >Ko'proq ma'lumot</button>
+            <button className = "btn"  data-aos = "fade-up" data-aos-delay = "300" >кўпроқ ма'лумот</button>
         </>
     )
 }
